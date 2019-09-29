@@ -1,0 +1,94 @@
+
+<html> 
+  <head>
+      <meta charset="utf-8" />
+      <meta name="description" content="A frontend dashboard for the
+  TrackMe application" />
+      <meta name="author" content="Muhammad Ahmed Khan" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>TAhmed</title>
+      <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+  </head>
+  <body>
+    <header>
+    <div class="main">
+      <ul>
+          <li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+          <li class="main_item"><a href="/control-devices">Device Control</a></li>
+          <li class="main_item"><a href="/tab">Usage</a></li>
+          <li class="main_item"><a href="#">Notification</a>
+          <li class="main_item"><a href="/">Log Out</a></li>
+      </ul>
+    </div>
+        <div class="controldevice">
+        <div class="heading">
+            <h1>
+                CONTROL YOUR KITCHEN APPLIANCES!
+            </h1>
+        </div>     
+    <center> <br> <br> <br>
+
+      <form action="https://api.particle.io/v1/devices/25001d000c47373336323230/led?access_token=a85b8096e40fcf4b3bd790de3f17e0f3694e055e" method="POST">
+<br>
+      <br>
+      <div class="column">
+          <img src="stoveon.png" alt="stoveon" margin="10" height="150" width="150">
+          <input type="checkbox" name="args" value="onred">ON STOVE.
+        </div>
+      
+       <br>
+       <div class="column">
+          <img src="stoveoff.jpg" alt="stoveoff" height="150" width="150">
+          <input type="checkbox" name="args" value="offred">OFF STOVE.
+        </div>
+       
+      <br>
+      <div class="column">
+          <img src="fanon.jpg" alt="fanon" height="150" width="150">
+          <input type="checkbox" name="args" value="ongreen">ON EXHAUST FAN.
+       </div>
+      
+      <br>
+      <div class="column">
+          <img src="fanoff.png" alt="fanoff" height="150" width="150">
+          <input type="checkbox" name="args" value="offgreen">OFF EXHAUST FAN. 
+        </div>
+     
+      <br>
+
+      <div class="column">
+          <img src="lighton.jpg" alt="lighton" height="150" width="150">
+          <input type="checkbox" name="args" value="onblue">KITHCEN LIGHTS.
+        </div>
+      
+       <br>
+       <div class="column">
+          <img src="lightoff.jpg" alt="lightoff" height="150" width="150">
+          <input type="checkbox" name="args" value="offblue">OFF KITHCEN LIGHTS. 
+        </div>
+      
+      <br>
+			<input type="submit" value="Send">
+      <!-- <button class="btn btn-success" id="add-device">Save</button> -->
+      </form>
+      </center> 
+      <div id="footer"></div>
+    
+         <!-- <div class="container">
+        <div class="row"> -->
+            
+            
+    </div>
+            
+             
+             
+    
+
+    
+    
+    <script type="text/Javascript" src="app.js"></script>
+  </header>
+  </body>
+</html>
+
+  

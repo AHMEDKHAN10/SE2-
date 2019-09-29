@@ -1,0 +1,95 @@
+<html>
+    <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="plotly.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="styleplotly.css">
+    </head>
+    <body>
+    <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+    <div class="container-fluid">
+    <a class="navbar-brand" href="#"><img src="img/logo.png" height="70" width="70"></a>
+    <button
+        class="navbar-toggler" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/home">Home</a>
+                </li>
+                <!--<li class="nav-item">
+                        <a class="nav-link" href="/notification">Notification</a>
+                </li>
+                <li class="nav-item">-->
+                        <a class="nav-link" href="/control-devices">Control</a>
+                </li>
+                <li class="nav-item">
+                        <a class="nav-link" href="/tab">Usage</a>
+                </li>
+                <li class="nav-item">
+                        <a class="nav-link" href="/login">Logout</a>
+                </li>
+            </ul>
+    </div>
+    </div>
+    </nav>
+    <div class="navbar"><span>Real-Time Chart with Plotly.js</span></div>
+    <div class="wrapper">
+        <div id="chart"></div>
+        <p> 
+            View Count: <strong id = "viewcount">0</strong>
+        </p>
+
+        <script>
+
+            var dataab = [1];
+            function getData() {
+                //return Math.random();
+                //const textviewcount = document.getElementById('viewcount');
+                fetch('https://nowexpress-pn3pr5jm1.now.sh/users')
+                .then(response => response.json()).then(data =>{
+                    console.log(data);
+                    for(var i =0; i<dataab.length;i++){
+                        dataab[i]=  parseInt(data[i].Temperature);
+
+                
+                }
+
+                
+
+
+                     Plotly.plot('chart',[{
+                     y: dataab,
+                    type:'line'
+                 }]);
+                    //console.log(dataab);
+                    
+                })
+                .catch(function(error){
+                    console.log(error);
+                });
+            }  
+            //document.addEventListener('DOMcontentLoaded', function(){
+               // getData();
+            //});
+
+            
+           
+            
+            var cnt = 0;
+            setInterval(function(){
+                Plotly.extendTraces('chart',{ y:[[(getData())]]}, [0]);
+                cnt++;
+                if(cnt > 500) {
+                    Plotly.relayout('chart',{
+                        xaxis: {
+                            range: [cnt-500,cnt]
+                        }
+                    });
+                }
+            },500);
+        </script>
+    </div>
+    </body>
+</html>
