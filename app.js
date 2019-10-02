@@ -81,11 +81,11 @@ devices.forEach(function(device) {
     localStorage.setItem('isAuthenticated', JSON.stringify(true));
     location.href = '/home';
   });
-  // const logout = () => 
-  // {
-  //   localStorage.removeItem('isAuthenticated');
-  //   location.href = '/';
-  // }
+  const logout = () => 
+  {
+    localStorage.removeItem('isAuthenticated');
+    location.href = '/';
+  }
 
 
   
