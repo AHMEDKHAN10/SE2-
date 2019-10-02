@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="A frontend dashboard for theTrackMe application" />
+    <meta name="author" content="Muhammad Ahmed Khan" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" media="screen" href="stylelogin.css" />
+    <title>SMART KITCHEN</title>
+  </head>
+    
+
+  <body background="1.jpg">
+  <script>
+  
+  </script>
+  <header>
+      
+     <div class="loginbox">
+    
+            <h1>LOGIN</h1>
+    <form>
+        
+                <div id="status"></div>
+
+                <!-- Facebook login or logout button -->
+                <a href="javascript:void(0);" onclick="fbLogin()" id="fbLink"><img src="fblogin.png"/></a>
+
+                    <!-- Display user profile data -->
+                
+
+                <!--<div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-auto-logout-link="false" data-use-continue-as="false" id="fblogin"></div>-->
+                <div class = "form-group">
+                        <label for="user">Username:</label>
+                        <input type="text" placeholder = "Enter Username" class="form-control" id="user" />    
+                    </div>
+                    
+            
+                    <div class = "form-group">
+                        <label for="pwd">Password:</label>
+                        <input type="password" placeholder = "Enter Password"class="form-control" id="password" />    
+                    </div>
+                    <button type ="button" class="btn btn-success" id="Login-Button">Login</button>
+                
+                
+                <br>
+                <br>
+                <div class="alert alert-danger" role="alert" id="message" style="display: none;">
+                        <strong id="message-warning"></strong>
+                </div>
+            
+                <!-- <label>
+                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label> -->
+                    <p>
+                            Not have an account? Register
+                            <a href = "/register"> here</a>
+                    </p>
+                
+            
+                <div class="container">
+                <!-- <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button> -->
+                <span class="psw">Forgot <a href="#">password?</a></span>
+            </div>
+            
+            </form>
+        
+              </div>
+    
+</script>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    
+    <script type="text/Javascript" src="app.js"></script>
+    <script type="text/Javascript" src="fb.js"></script>
+  <header>
+  </body>
+  
+  </html>
