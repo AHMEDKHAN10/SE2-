@@ -11,6 +11,8 @@
     
 
   <body background="1.jpg">
+  <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v4.0&appId=2324581844525782&autoLogAppEvents=1"></script>
   <script>
   
   </script>
@@ -20,11 +22,14 @@
     
             <h1>LOGIN</h1>
     <form>
-        
-                <div id="status"></div>
+                
+                
+                
 
                 <!-- Facebook login or logout button -->
-                <a href="javascript:void(0);" onclick="fbLogin()" id="fbLink"><img src="fblogin.png"/></a>
+                
+                <!--<a href="javascript:void(0);" onclick="fbLogin()" id="fbLink"><img src="fblogin.png"/></a>-->
+                
 
                     <!-- Display user profile data -->
                 
@@ -41,7 +46,10 @@
                         <input type="password" placeholder = "Enter Password"class="form-control" id="password" />    
                     </div>
                     <button type ="button" class="btn btn-success" id="Login-Button">Login</button>
-                
+                    
+                    <fb:login-button scope="public_profile,email" onlogin="fbLogin();"></fb:login-button>
+                    <div id="userData"></div>
+                    <div id="status"></div>
                 
                 <br>
                 <br>
